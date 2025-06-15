@@ -20,7 +20,9 @@ BLACK = (0, 0, 0)
 class Planet:
     AU = 149.6e6 * 1000  # Astronomical Unit in meters
     G = 6.67428e-11  # Gravitational constant
-    SCALE = 15 / AU  # 1AU = 15 pixels, adjust for visibility
+    # Increase the general scale so that the inner planets are visible
+    # outside the surface of the sun.
+    SCALE = 80 / AU  # 1AU = 80 pixels
     TIMESTEP = 3600 * 24  # 1 day in seconds
 
     def __init__(self, x, y, radius, color, mass):
