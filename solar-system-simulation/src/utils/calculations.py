@@ -1,16 +1,26 @@
-def calculate_orbital_period(semi_major_axis, gravitational_constant, mass_sun):
+def calculate_orbital_period(
+    semi_major_axis,
+    gravitational_constant=6.67430e-11,
+    mass_sun=1.989e30,
+):
+    """Calculate the orbital period using Kepler's third law.
+
+    Parameters
+    ----------
+    semi_major_axis : float
+        The semi-major axis of the orbit in meters.
+    gravitational_constant : float, optional
+        Gravitational constant in m^3 kg^-1 s^-2. Defaults to ``6.67430e-11``.
+    mass_sun : float, optional
+        Mass of the sun in kilograms. Defaults to ``1.989e30``.
+
+    Returns
+    -------
+    float
+        The orbital period in seconds.
     """
-    Calculate the orbital period of a planet using Kepler's third law.
-    
-    Parameters:
-    semi_major_axis (float): The semi-major axis of the orbit in meters.
-    gravitational_constant (float): The gravitational constant (6.67430e-11 m^3 kg^-1 s^-2).
-    mass_sun (float): The mass of the sun in kilograms (1.989e30 kg).
-    
-    Returns:
-    float: The orbital period in seconds.
-    """
-    return 2 * 3.14159 * ((semi_major_axis**3) / (gravitational_constant * mass_sun))**0.5
+
+    return 2 * 3.14159 * ((semi_major_axis**3) / (gravitational_constant * mass_sun)) ** 0.5
 
 def calculate_gravitational_force(mass1, mass2, distance):
     """
